@@ -1,53 +1,12 @@
 <?php
 add_action( 'customize_register', 'cd_customizer_settings' );
 function cd_customizer_settings( $wp_customize ) {
-/* Tutorial Code
--------------------------------------------------------
-*/
+  /* General
+  -------------------------------------------------------
+  */
 
-$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-
-
-$wp_customize->add_section( 'cd_button' , array(
-      'title'      => 'The Button',
-      'priority'   => 20,
-  ) );
-
-  $wp_customize->add_setting( 'cd_button_display' , array(
-      'default'     => true,
-      'transport'   => 'refresh',
-  ) );
-
-  $wp_customize->add_control( 'cd_button_display', array(
-  'label' => 'Button Display',
-  'section' => 'cd_button',
-  'settings' => 'cd_button_display',
-  'type' => 'radio',
-  'choices' => array(
-    'show' => 'Show Button',
-    'hide' => 'Hide Button',
-  ),
-) );
-
-  $wp_customize->add_setting( 'cd_button_text' , array(
-    'default'     => 'Come On In',
-    'transport'   => 'postMessage',
-  ) );
-
-  $wp_customize->add_control( 'cd_button_text', array(
-    'label' => 'Button Text',
-    'section'	=> 'cd_button',
-    'type'	 => 'text',
-  ) );
-
-
-
-
-
-/* Theme Code
--------------------------------------------------------
-*/
+  $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 /* Brand
 -------------------------------------------------------
@@ -122,14 +81,14 @@ $wp_customize->add_section( 'cd_button' , array(
     'transport'         => 'refresh',
   ) );
   $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'profile_image', array(
-    'label'           => 'Profile Picture',
-    'section'         => 'header_images',
-    'button_labels'   => array(
-      'select'      => 'Select Image',
-      'change'      => 'Change Image',
-      'remove'      => 'Remove',
-      'default'     => 'Default',
-      'frame_title' => 'Select Image',
+    'label'          => 'Profile Picture',
+    'section'        => 'header_images',
+    'button_labels'  => array(
+      'select'       => 'Select Image',
+      'change'       => 'Change Image',
+      'remove'       => 'Remove',
+      'default'      => 'Default',
+      'frame_title'  => 'Select Image',
       'frame_button' => 'Choose Image',
     )
   )) );
@@ -140,35 +99,115 @@ $wp_customize->add_section( 'cd_button' , array(
   ) );
 
   $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'background_image1', array(
-    'label'           => 'Header Background Image',
-    'section'         => 'header_images',
-    'flex_width'      => true,
-    'flex_height'     => true,
-    'button_labels'   => array(
-      'select'      => 'Select Image',
-      'change'      => 'Change Image',
-      'remove'      => 'Remove',
-      'default'     => 'Default',
-      'frame_title' => 'Select Image',
+    'label'          => 'Header Background Image',
+    'section'        => 'header_images',
+    'flex_width'     => true,
+    'flex_height'    => true,
+    'button_labels'  => array(
+      'select'       => 'Select Image',
+      'change'       => 'Change Image',
+      'remove'       => 'Remove',
+      'default'      => 'Default',
+      'frame_title'  => 'Select Image',
       'frame_button' => 'Choose Image',
     )
   )) );
 
   $wp_customize->add_section( 'social' , array(
-    'title'      => 'Contact Info and Social Media Links',
-    'panel'      => 'header_area_panel',
-    'priority'   => 40,
+    'title'       => 'Contact Info and Social Media Links',
+    'panel'       => 'header_area_panel',
+    'priority'    => 40,
   ) );
 
+  $wp_customize->add_setting( 'phone_display' , array(
+    'default'     => true,
+    'transport'   => 'refresh',
+  ) );
+  $wp_customize->add_control( 'phone_display', array(
+  'label'          => 'Show the Phone Number',
+  'description'    => 'Default is true',
+  'section'        => 'social',
+  'settings'       => 'phone_display',
+  'type'           => 'radio',
+  'choices'        => array(
+    'show'            => 'Show',
+    'hide'            => 'Hide',
+  ),
+  ) );
   $wp_customize->add_setting( 'phone_number' , array(
-    'default'     => 'Come On In',
+    'default'     => '1 (314) 765-9870',
     'transport'   => 'postMessage',
   ) );
   $wp_customize->add_control( 'phone_number', array(
-    'label' => 'Phone Number',
-    'section'	=> 'social',
-    'type'	 => 'text',
+    'label'       => 'Phone Number',
+    'section'	    => 'social',
+    'type'	      => 'text',
   ) );
+
+  $wp_customize->add_setting( 'email_display' , array(
+    'default'     => true,
+    'transport'   => 'refresh',
+  ) );
+  $wp_customize->add_control( 'email_display', array(
+  'label'         => 'Show Your Email',
+  'description'   => 'Default is true',
+  'section'       => 'social',
+  'settings'      => 'email_display',
+  'type'          => 'radio',
+  'choices'       => array(
+    'show'           => 'Show',
+    'hide'           => 'Hide',
+  ),
+  ) );
+  $wp_customize->add_setting( 'email' , array(
+    'default'     => 'email@domain.com',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'email', array(
+    'label'       => 'Email Address',
+    'section'	    => 'social',
+    'type'	      => 'text',
+  ) );
+
+
+
+  $wp_customize->add_setting( 'facebook' , array(
+    'default'     => '#',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'facebook', array(
+    'label'       => 'Facebook',
+    'section'	    => 'social',
+    'type'	      => 'text',
+  ) );
+  $wp_customize->add_setting( 'twitter' , array(
+    'default'     => '#',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'twitter', array(
+    'label'       => 'Twitter',
+    'section'	    => 'social',
+    'type'	      => 'text',
+  ) );
+  $wp_customize->add_setting( 'instagram' , array(
+    'default'     => '#',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'instagram', array(
+    'label'       => 'Instagram',
+    'section'	    => 'social',
+    'type'	      => 'text',
+  ) );
+  $wp_customize->add_setting( 'linkedin' , array(
+    'default'     => '#',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'linkedin', array(
+    'label'       => 'LinkedIn',
+    'section'	    => 'social',
+    'type'	      => 'text',
+  ) );
+
 
 
 }
@@ -184,9 +223,25 @@ function cd_customizer_css()
          </style>
     <?php
 }
+function show_phone() {
+  if( get_theme_mod( 'phone_display', 'show' ) == 'show' ) {
+    $newval = get_theme_mod( 'phone_number' );
+    preg_match_all("/\d/", $newval, $matches);
+    $phoneValues = array_reverse($matches[0]);
 
+    foreach ($phoneValues as $x) {
+      $phoneLink = $phoneLink . $x;
+    }
+    $phoneLink = substr($phoneLink, 0, 4) . "-" . substr($phoneLink, 4, 3) . "-" . substr($phoneLink, 7, 3);
+    $phoneLink = "tel:" . strrev($phoneLink);
+    echo "<a href='$phoneLink'>" . get_theme_mod( 'phone_number' ) . "</a>";
+  }
+}
+
+
+/*
 function cd_show_main_button() {
     if( get_theme_mod( 'cd_button_display', 'show' ) == 'show' ) {
         echo "<a href='' class='button'>" . get_theme_mod( 'cd_button_text', 'Come On In' ) . "</a>";
     }
-}
+}*/

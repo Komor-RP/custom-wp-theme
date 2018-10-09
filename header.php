@@ -31,19 +31,26 @@
             <hr>
           </div>
           <div class="cardInfo" id="phone">
-            <i class="fas fa-phone"></i>
+            <?php if( get_theme_mod( 'phone_display', 'show' ) == 'show' ) : ?>
+              <i class="fas fa-phone"></i>
 
-            <p><a href="tel:+1-303-499-7111"> <?php echo get_theme_mod('phone_number') ?> </a></p>
+                <p><?php echo show_phone() ?></p>
+
+            <?php endif; ?>
           </div>
           <div class="cardInfo" id="email">
-            <i class="fas fa-envelope"></i>
-            <p><a href="mailto:aaron@activatebiz.com">aaron@activatebiz.com</a></p>
+
+            <?php if( get_theme_mod( 'email_display', 'show' ) == 'show' ) : ?>
+              <i class="fas fa-envelope"></i>
+              <p><a href="mailto:<?php echo sanitize_email(get_theme_mod('email')) ?>  "> <?php echo sanitize_email(get_theme_mod('email')) ?> </a></p>
+            <?php endif; ?>
+
           </div>
           <div class="cardInfo" id="socialBar">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin"></i>
+            <a href='<?php echo get_theme_mod('facebook') ?>' target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href='<?php echo get_theme_mod('twitter') ?>' target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href='<?php echo get_theme_mod('instagram') ?>' target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href='<?php echo get_theme_mod('linkedin') ?>' target="_blank"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
         <div class="col-xs-12 col-md-6">

@@ -25,27 +25,28 @@
     } );
   } );
 
-  wp.customize( 'phone_number', function( value ) {
+
+  wp.customize( 'facebook' , function( value ) {
     value.bind( function( newval ) {
-      $( '#phone.cardInfo a' ).text( newval );
-      newval = newval.split("");
-      var phoneLink = [];
-      for (var i = 0; i < newval.length; i++) {
-        if (newval[i].match(/\d/)) {
-          phoneLink.push(newval[i]);
-        }
-      }
-      if (phoneLink.length = 11) {
-        phoneLink.reverse();
-        phoneLink = `${phoneLink.slice(0,4)}-${phoneLink.slice(4,7)}-${phoneLink.slice(7,10)}-${phoneLink.slice(10)}`;
-        phoneLink = phoneLink.split("").reverse();
-        
-        console.log(phoneLink);
-      }
-
-
+      $( '#socialBar .fa-facebook-square a' ).attr("href", newval);
     } );
   } );
+
+  wp.customize( 'twitter' , function( value ) {
+    value.bind( function( newval ) {
+      $( '#socialBar .fa-twitter-square a' ).attr("href", newval);
+    } );
+  } );
+
+  wp.customize( 'instagram' , function( value ) {
+    value.bind( function( newval ) {
+      $( '#socialBar .fa-instagram-square a' ).attr("href", newval);
+    } );
+  } );
+
+
+
+
 
 
 
