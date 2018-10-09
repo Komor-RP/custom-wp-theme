@@ -1,0 +1,356 @@
+/*
+Theme Name: Activate Professional Resume Theme
+Author: Fan Huang
+Description: Bootstrap Resume Template
+Version: 0.0.1
+Tags: bootstrap
+*/
+
+/*
+ * Globals
+ */
+
+
+ .img-fluid {
+   width: 100%;
+ }
+ #headerSection {
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+ #businessCard {
+   background-color: rgba(51, 51, 51, .8);
+   color: #ffffff;
+   border-radius: 2px;
+ }
+
+ #cardDescription {
+   padding: 30px 30px 0 30px;
+ }
+ #cardDescription h1 a{
+   color: #ffa500;
+   margin-top: 0;
+   line-height: 1;
+   font-size: 2rem;
+ }
+ #site_logo img {
+   max-width: 350px;
+   height: auto;
+ }
+ #cardDescription h2 {
+   margin-top: 15px;
+ }
+ #cardDescription hr {
+   border-top: 2px solid #e1e7d499;
+   width: 75%;
+   margin: 15px auto 30px 0;
+ }
+ #businessCard #profile_image {
+   padding: 15px;
+ }
+ #cardDescription p, #cardDescription a {
+   display: inline;
+   color: white;
+   font-size: 1.1rem;
+ }
+ #cardDescription i {
+   font-size: 2.3rem;
+   padding-right: 10px;
+   padding-left: 5px;
+   vertical-align: middle;
+ }
+ .cardInfo {
+   display: block;
+   margin-bottom: 20px;
+ }
+ #socialBar i{
+   font-size: 2.8em;
+   padding: 5px;
+   border-radius: 5px;
+   transition: all .4s ease;
+ }
+ #socialBar i:hover{
+   background: rgba(255, 255, 255, .7);
+ }
+ i.fa-facebook-square:hover {
+   color: #3b5999;
+ }
+ i.fa-twitter-square:hover {
+   color: #1da1f3;
+ }
+ i.fa-instagram:hover {
+   color: #d10869;
+ }
+ i.fa-linkedin:hover {
+   color: #0077b5;
+ }
+
+ /*ABOUT SECTION*/
+ #aboutSection div {
+   margin: 40px auto;
+   text-align: center;
+ }
+ #aboutSection p {
+   font-size: 1.2rem
+ }
+
+ /*Skills*/
+ #skillsSection {
+   background: #5097b9;
+   padding: 80px 15px;
+ }
+ #skillsSection h2 {
+   margin-bottom: 20px;
+ }
+ #skillsSection div.row {
+   margin: 0 auto;
+ }
+
+ #skillsSection .row > div:nth-child(2) {
+   text-align: center;
+   margin-bottom: 20px;
+ }
+
+ #graphs .inner {
+   background-color: #d2d2d2;
+   padding: 30px 20px;
+ }
+ .progress {
+   margin-bottom: 20px;
+ }
+ .progress:last-child {
+   margin-bottom: 0;
+ }
+
+ /*PROJECTS*/
+
+ #projectSection {
+   padding: 80px 15px;
+ }
+
+ #projectSection .title_section {
+   margin-bottom: 20px;
+   text-align: center;
+ }
+ .title_section h2 {
+   margin-bottom: 20px;
+ }
+ #projectSection .work {
+   padding: 20px;
+
+ }
+ #projectSection .work .img-container {
+   height: 40vh;
+   background-size: cover;
+   background-position: top center;
+ }
+ #projectSection .work:first-child .img-container{
+   background-image: url('assets/profile_pic.jpg');
+ }
+ #projectSection h3 {
+   text-align: center;
+   margin: 30px 0 10px 0;
+ }
+ .work .inner {
+   background-color: #ffffff;
+   padding: 15px;
+   box-shadow: 1px 1px 5px #cfcfcf;
+ }
+
+
+ /*Contact Section*/
+ #contactSection {
+   background: #515151;
+   color: rgba(255,255,255,.9);
+   padding: 80px 15px;
+ }
+ #contactSection h2 {
+   text-align: center;
+   margin-bottom: 30px;
+ }
+ #contactSection .row > div:nth-child(2) {
+   margin-bottom: 30px;
+   text-align: center;
+ }
+ #contactSection input, #contactSection textarea {
+   width: 100%;
+ }
+ label {
+   display: block;
+   margin-top: 20px;
+   margin-bottom: 0;
+ }
+ label:first-child {
+   margin-top: 0;
+ }
+
+
+ #contactSection button {
+   display: block;
+   margin-top: 20px;
+
+ }
+ footer {
+   background: #393939;
+   color: rgba(255,255,255,.9);
+   text-align: center;
+ }
+ footer p {
+   margin-bottom: 0;
+ }
+
+
+
+ @media (min-width: 576px) {
+   #contactSection .row > div {
+     margin: 0 auto;
+   }
+   #businessCard #profile_image {
+     max-width: 400px;
+   }
+   #projectSection .work .img-container {
+     height: 60vh;
+     max-height: 375px;
+   }
+ }
+
+
+ @media (min-width: 768px) {
+   #headerSection {
+     padding-top: 40px;
+     padding-bottom: 80px;
+   }
+   #businessCard {
+     margin: 0;
+   }
+   #cardDescription {
+     padding: 60px;
+   }
+   #businessCard #profile_image {
+     padding: 60px;
+   }
+   #aboutSection p {
+     font-size: 1.4rem;
+   }
+   #skillsSection div.row {
+     width: 90%;
+   }
+   #graphs .inner {
+     margin: 0 30px;
+     padding: 50px 30px;
+   }
+   #contactSection form {
+     margin-bottom: 40px;
+   }
+   #contactSection .row > div:nth-child(2) {
+     margin-bottom: 30px;
+   }
+   #projectSection .work .img-container {
+     height: 40vh;
+     max-height: auto;
+   }
+   #projectSection .work {
+     padding: 10px;
+   }
+   #contactSection .row > div {
+     margin: 0;
+   }
+   #businessCard #profile_image {
+     max-width: 100%;
+   }
+ }
+
+ @media (min-width: 992px) {
+   #businessCard {
+     margin: 0 80px 80px 80px;
+   }
+   #headerSection {
+
+   }
+ }
+
+ @media (min-width: 1024px) {
+   #cardDescription, #businessCard #profile_image {
+     padding: 40px;
+   }
+   #cardDescription h1 {
+     font-size: 2.4rem;
+   }
+   #cardDescription h2 {
+     font-size: 2.4rem;
+   }
+   #socialBar i {
+     font-size: 2.8rem;
+   }
+   #cardDescription p, #cardDescription a {
+     font-size: 1.4rem;
+   }
+   #cardDescription hr {
+     width: 60%;
+     margin: 20px auto 40px 0;
+   }
+   #projectSection .work {
+     padding: 20px;
+   }
+ }
+ @media (min-width: 1200px) {
+   #cardDescription, #businessCard #profile_image {
+     padding: 60px;
+   }
+   #cardDescription hr {
+     margin: 20px auto 50px 0;
+   }
+   .cardInfo {
+     margin-bottom: 30px;
+   }
+   #businessCard {
+     width: 80%;
+     margin: 0 auto;
+   }
+ }
+ @media (min-width: 1400px) {
+   .container-fluid .row {
+     max-width: 1500px;
+     margin: 0 auto;
+   }
+   #cardDescription, #businessCard #profile_image {
+     padding: 80px;
+   }
+ }
+
+ /*portrait tablets*/
+ @media (min-width: 992px) and (orientation:portrait){
+   #headerSection {
+     height: auto;
+   }
+ }
+
+
+
+
+ /*landscape phones*/
+ @media (max-width: 576px) and (orientation:landscape) {
+   #headerSection {
+     padding: 0;
+   }
+   #businessCard {
+     margin: 0;
+     height: 100vh;
+   }
+   #cardDescription {
+     padding: 30px;
+   }
+   #businessCard #profile_image {
+     padding-top: 30px;
+   }
+
+ }
+
+ @media (max-height: 500px) and (orientation:landscape) and (max-width: 768px){
+   #businessCard {
+     height: auto;
+   }
+   #projectSection .work .img-container {
+     height: 90vh;
+   }
+ }
