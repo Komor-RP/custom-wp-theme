@@ -2,84 +2,72 @@
 
 
 
+<?php if (get_theme_mod('about_display', 'Show') == "show") : ?>
 
-<div class="container" id="aboutSection">
-  <div class="row" id="aboutContent">
-    <div class="col-md-10">
-      <p>Lorem ipsum dolor amet distillery copper mug put a bird on it four loko kombucha tilde cronut etsy thundercats quinoa 3 wolf moon dreamcatcher lumbersexual fixie ethical. Normcore kinfolk dreamcatcher snackwave. Pour-over hella pabst, squid man braid listicle hell of gastropub coloring book beard biodiesel post-ironic. Blog asymmetrical actually gentrify banh mi master cleanse. Fashion axe biodiesel green juice, tbh sustainable yr selfies wolf heirloom. Pabst leggings tbh street art. Flannel semiotics heirloom before they sold out master cleanse umami whatever authentic.</p>
+  <div class="container" id="aboutSection">
+    <div class="row" id="aboutContent">
+      <div class="col-md-10">
 
-
-      <?php if ( get_theme_mod( 'profile_image' ) ) : ?>
-        <img src='<?php echo esc_url( get_theme_mod( 'profile_image' ) ); ?>' alt='profile'>
-    <?php else : ?>
-        <img src='https://cdn.discordapp.com/emojis/482045082669940737.png?v=1' alt='ew'>
-    <?php endif; ?>
-
-
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid" id="skillsSection">
-  <div class="row">
-    <div class="col-sm-8 order-2" id="graphs">
-      <div class="inner">
-
-        <label>Digital Marketing</label>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:70%">70%
-            <span class="sr-only">70% Complete</span>
-          </div>
-        </div>
-
-        <label>Website Development</label>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:30%">
-            <span class="sr-only">70% Complete</span>
-          </div>
-        </div>
-
-        <label>Website Development</label>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:80%">
-            <span class="sr-only">70% Complete</span>
-          </div>
-        </div>
-
-        <label>Website Development</label>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:30%">
-            <span class="sr-only">70% Complete</span>
-          </div>
-        </div>
-
-        <label>Website Development</label>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="70"
-            aria-valuemin="0" aria-valuemax="100" style="width:30%">
-            <span class="sr-only">70% Complete</span>
-          </div>
-        </div>
-
+        <p><?php echo get_theme_mod('about_description') ?></p>
 
       </div>
     </div>
-    <div class="col-sm-4 order-1">
-      <div class="inner">
-        <h2>Skills</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Aenean euismod bibendum laoreet. Proin gravida dolor sit amet
-          lacus accumsan et viverra justo commodo.</p>
+  </div>
+
+<?php endif; ?>
+
+<?php if (get_theme_mod('display_skills', 'Show') == "show") : ?>
+
+  <div class="container-fluid" id="skillsSection">
+    <div class="row">
+      <div class="col-sm-8 order-2 order-md-1" id="graphs">
+        <div class="inner">
+
+
+
+          <label> <?php echo sanitize_text_field(get_theme_mod('skill1_label')) ?> </label>
+
+          <div class="progress">
+            <?php echo show_skills_graph(get_theme_mod('skill1')) ?>
+          </div>
+
+        
+
+          <label> <?php echo sanitize_text_field(get_theme_mod('skill2_label')) ?> </label>
+          <div class="progress">
+            <?php echo show_skills_graph(get_theme_mod('skill2')) ?>
+          </div>
+
+          <label> <?php echo sanitize_text_field(get_theme_mod('skill3_label')) ?> </label>
+          <div class="progress">
+            <?php echo show_skills_graph(get_theme_mod('skill3')) ?>
+          </div>
+
+          <label> <?php echo sanitize_text_field(get_theme_mod('skill4_label')) ?> </label>
+          <div class="progress">
+            <?php echo show_skills_graph(get_theme_mod('skill4')) ?>
+          </div>
+
+          <label> <?php echo sanitize_text_field(get_theme_mod('skill5_label')) ?> </label>
+          <div class="progress">
+            <?php echo show_skills_graph(get_theme_mod('skill4')) ?>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-sm-4 order-1 order-md-2">
+        <div class="inner">
+          <h2> <?php echo sanitize_text_field( get_theme_mod('skills_title')) ?> </h2>
+          <p> <?php echo esc_textarea( get_theme_mod('skills_description')) ?>  </p>
+          </div>
+
+        </div>
       </div>
 
     </div>
-  </div>
 
-</div>
+<?php endif; ?>
 
 <div class="container-fluid" id="projectSection">
   <div class="row title_section">

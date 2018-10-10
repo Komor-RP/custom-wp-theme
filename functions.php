@@ -12,3 +12,8 @@
         true
     );
   }
+
+
+  if ( class_exists( 'WP_Customize_Control' ) ) {
+  	require_once( dirname(__FILE__) . '/customizer-range-value' . '/class-customizer-range-value-control.php' );
+  }

@@ -25,22 +25,97 @@
     } );
   } );
 
-
-  wp.customize( 'facebook' , function( value ) {
+  wp.customize( 'about_description', function( value ) {
     value.bind( function( newval ) {
-      $( '#socialBar .fa-facebook-square a' ).attr("href", newval);
+      $( '#aboutSection p' ).text( newval );
     } );
   } );
 
-  wp.customize( 'twitter' , function( value ) {
+  wp.customize( 'skills_description', function( value ) {
     value.bind( function( newval ) {
-      $( '#socialBar .fa-twitter-square a' ).attr("href", newval);
+      $( '#skillsSection p' ).text( newval );
     } );
   } );
 
-  wp.customize( 'instagram' , function( value ) {
+  wp.customize( 'skills_title', function( value ) {
     value.bind( function( newval ) {
-      $( '#socialBar .fa-instagram-square a' ).attr("href", newval);
+      $( '#skillsSection h2' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'skill1_label', function( value ) {
+    value.bind( function( newval ) {
+      $( '#skillsSection label:first-child' ).text( newval );
+      if (newval = "") {
+        $( '#skillsSection .progress:nth-child(2)' ).css( 'display', 'none' );
+      }
+    } );
+  } );
+
+  wp.customize( 'skill1', function( value ) {
+    value.bind( function( newval ) {
+      newval = newval + "%";
+      $( '#skillsSection .progress:nth-child(2) .progress-bar' ).text( newval );
+      $( '#skillsSection .progress:nth-child(2) .progress-bar' ).css( 'width', newval );
+    } );
+  } );
+
+  wp.customize( 'skill2_label', function( value ) {
+    value.bind( function( newval ) {
+      $( '#skillsSection label:nth-child(3)' ).text( newval );
+      if (newval = "") {
+        $( '#skillsSection label:nth-child(3)' ).css( 'display', 'none' );
+      }
+    } );
+  } );
+
+  wp.customize( 'skill2', function( value ) {
+    value.bind( function( newval ) {
+      newval = newval + "%";
+      $( '#skillsSection .progress:nth-child(4) .progress-bar' ).text( newval );
+      $( '#skillsSection .progress:nth-child(4) .progress-bar' ).css( 'width', newval );
+    } );
+  } );
+
+  wp.customize( 'skill3_label', function( value ) {
+    value.bind( function( newval ) {
+      $( '#skillsSection label:nth-child(5)' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'skill3', function( value ) {
+    value.bind( function( newval ) {
+      newval = newval + "%";
+      $( '#skillsSection .progress:nth-child(6) .progress-bar' ).text( newval );
+      $( '#skillsSection .progress:nth-child(6) .progress-bar' ).css( 'width', newval );
+    } );
+  } );
+
+  wp.customize( 'skill4_label', function( value ) {
+    value.bind( function( newval ) {
+      $( '#skillsSection label:nth-child(7)' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'skill4', function( value ) {
+    value.bind( function( newval ) {
+      newval = newval + "%";
+      $( '#skillsSection .progress:nth-child(8) .progress-bar' ).text( newval );
+      $( '#skillsSection .progress:nth-child(8) .progress-bar' ).css( 'width', newval );
+    } );
+  } );
+
+  wp.customize( 'skill5_label', function( value ) {
+    value.bind( function( newval ) {
+      $( '#skillsSection label:nth-child(9)' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'skill5', function( value ) {
+    value.bind( function( newval ) {
+      newval = newval + "%";
+      $( '#skillsSection .progress:nth-child(10) .progress-bar' ).text( newval );
+      $( '#skillsSection .progress:nth-child(10) .progress-bar' ).css( 'width', newval );
     } );
   } );
 
