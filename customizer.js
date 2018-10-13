@@ -18,10 +18,15 @@
     } );
   } );
 
-
-  wp.customize( 'cd_button_text', function( value ) {
+  wp.customize( 'phone_number', function( value ) {
     value.bind( function( newval ) {
-      $( 'a.button' ).html( newval );
+      $( '#phone a' ).html( newval );
+    } );
+  } );
+
+  wp.customize( 'email', function( value ) {
+    value.bind( function( newval ) {
+      $( '#email a' ).html( newval );
     } );
   } );
 
@@ -31,15 +36,15 @@
     } );
   } );
 
-  wp.customize( 'skills_description', function( value ) {
-    value.bind( function( newval ) {
-      $( '#skillsSection p' ).text( newval );
-    } );
-  } );
-
   wp.customize( 'skills_title', function( value ) {
     value.bind( function( newval ) {
       $( '#skillsSection h2' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'skills_description', function( value ) {
+    value.bind( function( newval ) {
+      $( '#skillsSection p' ).text( newval );
     } );
   } );
 
@@ -119,6 +124,60 @@
     } );
   } );
 
+
+  wp.customize( 'projects_title', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection h2' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_description', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .title_section p' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_title1', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .work:first-child h3' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_description1', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .work:first-child p' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_title2', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .work:nth-child(2) h3' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_description2', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .work:nth-child(2) p' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_title3', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .work:nth-child(3) h3' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'projects_description3', function( value ) {
+    value.bind( function( newval ) {
+      $( '#projectSection .work:nth-child(3) p' ).text( newval );
+    } );
+  } );
+
+  wp.customize( 'footer_copy', function( value ) {
+    value.bind( function( newval ) {
+      $( 'footer p span' ).text( newval );
+    } );
+  } );
 
 
 

@@ -1,9 +1,9 @@
 <?php
 add_action( 'customize_register', 'cd_customizer_settings' );
 function cd_customizer_settings( $wp_customize ) {
-  /* General
-  -------------------------------------------------------
-  */
+/* General
+-------------------------------------------------------
+*/
 
   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
   $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -66,7 +66,7 @@ function cd_customizer_settings( $wp_customize ) {
 */
 
   $wp_customize->add_panel( 'header_area_panel', array(
-    'title'       => 'Header Settings',
+    'title'       => 'Header Section',
     'description' => 'Adjust Header Settings and Content',
     'priority'    => 40,
   ) );
@@ -124,7 +124,7 @@ function cd_customizer_settings( $wp_customize ) {
     'transport'   => 'refresh',
   ) );
   $wp_customize->add_control( 'phone_display', array(
-  'label'          => 'Show the Phone Number',
+  'label'          => 'Show Your Phone Number?',
   'description'    => 'Default is true',
   'section'        => 'social',
   'settings'       => 'phone_display',
@@ -161,15 +161,13 @@ function cd_customizer_settings( $wp_customize ) {
   ) );
   $wp_customize->add_setting( 'email' , array(
     'default'     => 'email@domain.com',
-    'transport'   => 'refresh',
+    'transport'   => 'postMessage',
   ) );
   $wp_customize->add_control( 'email', array(
     'label'       => 'Email Address',
     'section'	    => 'social',
     'type'	      => 'text',
   ) );
-
-
 
   $wp_customize->add_setting( 'facebook' , array(
     'default'     => '#',
@@ -208,8 +206,6 @@ function cd_customizer_settings( $wp_customize ) {
     'type'	      => 'text',
 ) );
 
-
-
 /* ABOUT
 -------------------------------------------------------
 */
@@ -219,11 +215,7 @@ function cd_customizer_settings( $wp_customize ) {
   ) );
 
   $wp_customize->add_setting( 'about_description' , array(
-    'default'     => 'Lorem ipsum dolor amet distillery copper mug put a bird
-    on it four loko kombucha tilde cronut etsy thundercats quinoa 3 wolf moon
-    dreamcatcher lumbersexual fixie ethical. Normcore kinfolk dreamcatcher snackwave.
-    Pour-over hella pabst, squid man braid listicle hell of gastropub coloring
-    book beard biodiesel post-ironic. Blog asymmetrical actually gentrify banh mi master cleanse.',
+    'default'     => 'Ipsum quis incididunt or ullamco deserunt but excepteur nor mollit. Occaecat. Dolores natus so sunt so omnis yet ad velit so consequat. Error laboriosam, and accusantium, or consequuntur, qui esse but quaerat. Exercitation aperiam nor dolores for illum illum. Consectetur ex so anim or architecto quo.',
 
     'transport'          => 'postMessage',
     'sanitize_callback'  => 'wp_filter_nohtml_kses',
@@ -251,14 +243,12 @@ function cd_customizer_settings( $wp_customize ) {
   ) );
 
 
-
-
 /* SKILLS
 ------------------------------------
 */
   $wp_customize->add_panel('skills', array(
     'title'       => 'Skills Section',
-    'priority'    => 40,
+    'priority'    => 50,
     'description' => 'Adjust Content for Skills Section',
 
   ));
@@ -296,7 +286,7 @@ function cd_customizer_settings( $wp_customize ) {
   ) );
 
   $wp_customize->add_setting( 'skills_description' , array(
-    'default'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.',
+    'default'     => 'Ipsum quis incididunt or ullamco deserunt but excepteur nor mollit. Occaecat. Dolores natus so sunt so omnis yet ad velit so consequat. Error laboriosam, and accusantium, or consequuntur, qui esse but quaerat. Exercitation aperiam nor dolores for illum illum. Consectetur ex so anim or architecto quo.',
 
     'transport'          => 'postMessage',
     'sanitize_callback'  => 'wp_filter_nohtml_kses',
@@ -440,8 +430,220 @@ function cd_customizer_settings( $wp_customize ) {
   ) ) );
 
 
+/* PROJECTS
+------------------------------------
+*/
+  $wp_customize->add_panel('projects', array(
+    'title'       => 'Projects Section',
+    'priority'    => 60,
+    'description' => 'Adjust Content for Projects Section',
+
+  ));
+
+  $wp_customize->add_section( 'projects_general' , array(
+    'title'       => 'Projects General',
+    'panel'       => 'projects',
+    'priority'    => 0,
+  ) );
+
+  $wp_customize->add_setting( 'display_projects' , array(
+    'default'     => true,
+    'transport'   => 'refresh',
+  ) );
+  $wp_customize->add_control( 'display_projects', array(
+    'label'          => 'Show this section?',
+    'section'        => 'projects_general',
+    'settings'       => 'display_projects',
+    'type'           => 'radio',
+    'choices'        => array(
+      'show'            => 'Yes',
+      'hide'            => 'No',
+    ),
+  ) );
+
+  $wp_customize->add_setting( 'projects_title' , array(
+    'default'     => 'Projects',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'projects_title', array(
+    'label'       => 'Projects Title',
+    'section'	    => 'projects_general',
+    'type'	      => 'text',
+  ) );
+
+  $wp_customize->add_setting( 'projects_description' , array(
+    'default'     => 'Anim aspernatur, occaecat for si. Nemo non, mollit or aliqua reprehenderit laudantium and excepteur. Sunt. Sint excepteur yet pariatur ad culpa. Natus deserunt. Ratione totam irure. Aliquam proident so doloremque so iste nor unde. Est autem or aliquip consequat sed proident.',
+
+    'transport'          => 'postMessage',
+    'sanitize_callback'  => 'wp_filter_nohtml_kses',
+  ) );
+  $wp_customize->add_control( 'projects_description', array(
+    'label'          => 'Projects Text',
+    'description'    => 'Talk about your recent work!',
+    'section'        => 'projects_general',
+    'type'           => 'textarea',
+  ) );
+
+  $wp_customize->add_section( 'projects_blocks' , array(
+    'title'       => 'Edit Projects',
+    'panel'       => 'projects',
+    'priority'    => 0,
+  ) );
+
+  $wp_customize->add_setting( 'projects_title1' , array(
+    'default'     => 'Project Title',
+    'transport'   => 'postMessage',
+  ) );
+
+  $wp_customize->add_control( 'projects_title1', array(
+    'label'       => 'Project 1 Title',
+    'section'	    => 'projects_blocks',
+    'type'	      => 'text',
+  ) );
+
+  $wp_customize->add_setting( 'projects_description1' , array(
+    'default'     => 'Autem amet, yet illum, incididunt velitesse ea. Ut proident yet consequuntur or occaecat fugiat yet magnam or elit. Corporis sunt consequat eius for error. Aliquam tempora consequuntur or voluptate. Nequeporro. Anim irure quis. Laborum occaecat laboris but sequi, but voluptatem or labore nor nulla. Quaerat. Sint. Aspernatur aliquip, do and duis and quaerat vitae labore. Cupidatat sint nor aut quam cupidatat ullam. Aspernatur si and inventore reprehenderit.',
+
+    'transport'          => 'postMessage',
+    'sanitize_callback'  => 'wp_filter_nohtml_kses',
+  ) );
+  $wp_customize->add_control( 'projects_description1', array(
+    'label'          => 'Project 1 Description',
+    'section'        => 'projects_blocks',
+    'type'           => 'textarea',
+  ) );
+
+
+  $wp_customize->add_setting( 'projects_image1' , array(
+    'transport'         => 'refresh',
+  ) );
+  $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'projects_image1', array(
+    'label'           => 'Project 1 Image',
+    'section'         => 'projects_blocks',
+    'flex_width'      => true,
+    'flex_height'     => true,
+    'button_labels'   => array(
+      'select'      => 'Select Image',
+      'change'      => 'Change Image',
+      'remove'      => 'Remove',
+      'default'     => 'Default',
+      'frame_title' => 'Select Image',
+      'frame_button' => 'Choose Image',
+    )
+
+  )) );
+
+
+  $wp_customize->add_setting( 'projects_title2' , array(
+    'default'     => 'Project Title',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'projects_title2', array(
+    'label'       => 'Project 2 Title',
+    'section'	    => 'projects_blocks',
+    'type'	      => 'text',
+  ) );
+
+  $wp_customize->add_setting( 'projects_description2' , array(
+    'default'     => 'Ullamco nesciunt nequeporro iure non and laboris or ea. Nihil ullam. Et duis quis. Elit. Ab architecto or est tempora or cillum and officia. Illum natus nor occaecat and irure so nequeporro or ut yet laborum. Commodo aut aut nor velit yet minim laudantium magni. Explicabo anim so nostrum. Numquam sed ipsum nesciunt or aliqua ad or voluptatem. Numquam anim deserunt amet iste for eu. Nostrud labore ad yet nostrum or error est officia. Esse ipsa, aliquid autem illo nor culpa.',
+
+    'transport'          => 'postMessage',
+    'sanitize_callback'  => 'wp_filter_nohtml_kses',
+  ) );
+  $wp_customize->add_control( 'projects_description2', array(
+    'label'          => 'Project 2 Description',
+    'section'        => 'projects_blocks',
+    'type'           => 'textarea',
+  ) );
+
+  $wp_customize->add_setting( 'projects_image2' , array(
+    'transport'         => 'refresh',
+  ) );
+  $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'projects_image2', array(
+    'label'           => 'Project 2 Image',
+    'section'         => 'projects_blocks',
+    'flex_width'      => true,
+    'flex_height'     => true,
+    'button_labels'   => array(
+      'select'      => 'Select Image',
+      'change'      => 'Change Image',
+      'remove'      => 'Remove',
+      'default'     => 'Default',
+      'frame_title' => 'Select Image',
+      'frame_button' => 'Choose Image',
+    )
+
+  )) );
+
+  $wp_customize->add_setting( 'projects_title3' , array(
+    'default'     => 'Project Title',
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_control( 'projects_title3', array(
+    'label'       => 'Project 3 Title',
+    'section'	    => 'projects_blocks',
+    'type'	      => 'text',
+  ) );
+
+  $wp_customize->add_setting( 'projects_description3' , array(
+    'default'     => 'Adipisci nisi incidunt enim rem but quae adipisci. Laudantium. Sed. Deserunt nostrud. Iste molestiae est rem or anim, nostrud aliqua. Quis doloremque commodi eu. Dolor autem quae. Consequatur quae consequuntur numquam nor cupidatat and beatae so magnam. Deserunt eiusmod, eius. Exercitation consequuntur quae, illum voluptas or aute.',
+
+    'transport'          => 'postMessage',
+    'sanitize_callback'  => 'wp_filter_nohtml_kses',
+  ) );
+  $wp_customize->add_control( 'projects_description3', array(
+    'label'          => 'Project 3 Description',
+    'section'        => 'projects_blocks',
+    'type'           => 'textarea',
+  ) );
+
+  $wp_customize->add_setting( 'projects_image3' , array(
+    'transport'         => 'refresh',
+  ) );
+  $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'projects_image3', array(
+    'label'           => 'Project 3 Image',
+    'section'         => 'projects_blocks',
+    'flex_width'      => true,
+    'flex_height'     => true,
+    'button_labels'   => array(
+      'select'      => 'Select Image',
+      'change'      => 'Change Image',
+      'remove'      => 'Remove',
+      'default'     => 'Default',
+      'frame_title' => 'Select Image',
+      'frame_button' => 'Choose Image',
+    )
+
+  )) );
+
+/* FOOTER
+--------------------------------
+*/
+
+  $wp_customize->add_section( 'footer' , array(
+    'title'       => 'Footer Section',
+    'priority'    => 80,
+  ) );
+
+  $wp_customize->add_setting( 'footer_copy' , array(
+    'default'     => 'Theme Made by Activate Digital Marketing',
+    'transport'   => 'postMessage',
+  ) );
+
+  $wp_customize->add_control( 'footer_copy', array(
+    'label'       => 'Footer Text',
+    'section'	    => 'footer',
+    'type'	      => 'text',
+  ) );
+
+
+
+
 
 }
+
+
+
 
 add_action( 'wp_head', 'cd_customizer_css');
 
@@ -451,6 +653,10 @@ function cd_customizer_css()
          <style type="text/css">
              body { background: #<?php echo get_theme_mod('background_color', '#f4f4f4'); ?>; }
              #headerSection { background-image: url(" <?php echo wp_get_attachment_url( get_theme_mod( 'background_image1')); ?> "); }
+             #projectSection .work:first-child .img-container { background-image: url(" <?php echo wp_get_attachment_url( get_theme_mod( 'projects_image1' )); ?> "); }
+             #projectSection .work:nth-child(2) .img-container { background-image: url(" <?php echo wp_get_attachment_url( get_theme_mod( 'projects_image2' )); ?> "); }
+             #projectSection .work:nth-child(3) .img-container { background-image: url(" <?php echo wp_get_attachment_url( get_theme_mod( 'projects_image3' )); ?> "); }
+
          </style>
     <?php
 }
@@ -477,11 +683,3 @@ function show_skills_graph($skill) {
       <span class='sr-only'>" . sanitize_text_field($skill) . "%</span>
     </div> " ;
 }
-
-
-/*
-function cd_show_main_button() {
-    if( get_theme_mod( 'cd_button_display', 'show' ) == 'show' ) {
-        echo "<a href='' class='button'>" . get_theme_mod( 'cd_button_text', 'Come On In' ) . "</a>";
-    }
-}*/

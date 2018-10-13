@@ -1,8 +1,8 @@
-</div> <!--FOOTER-->
+ <!--FOOTER-->
 
 <footer>
   <div class="container">
-    <p>&copy; 2010-<?php echo date("Y");?> - Theme made by Activate Digital Marketing</p>
+    <p>&copy; <?php echo date("Y");?> - <span><?php echo get_theme_mod('footer_copy') ?></span></p>
   </div>
 
 

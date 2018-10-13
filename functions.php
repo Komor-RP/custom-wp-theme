@@ -17,3 +17,16 @@
   if ( class_exists( 'WP_Customize_Control' ) ) {
   	require_once( dirname(__FILE__) . '/customizer-range-value' . '/class-customizer-range-value-control.php' );
   }
+
+
+
+  add_action( 'init', 'custom_script_load' );
+  function custom_script_load() {
+    wp_enqueue_script(
+        'custom_script_load',
+        get_template_directory_uri() . '/js/script.js',
+        array( 'jquery' ),
+        '',
+        true
+    );
+  }

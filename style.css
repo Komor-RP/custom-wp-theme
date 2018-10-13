@@ -1,5 +1,5 @@
 /*
-Theme Name: Activate Professional Resume Theme
+Theme Name: Activate Professional Business Card Theme
 Author: Fan Huang
 Description: Bootstrap Resume Template
 Version: 0.0.1
@@ -32,6 +32,8 @@ Tags: bootstrap
   margin-top: 0;
   line-height: 1;
   font-size: 2.4rem;
+  text-decoration: none;
+
 }
 #site_logo img {
   max-width: 350px;
@@ -69,19 +71,19 @@ Tags: bootstrap
   border-radius: 5px;
   transition: all .4s ease;
 }
-#socialBar i:hover{
+#socialBar i{
   background: rgba(255, 255, 255, .7);
 }
-i.fa-facebook-square:hover {
+i.fa-facebook-square {
   color: #3b5999;
 }
-i.fa-twitter-square:hover {
+i.fa-twitter-square {
   color: #1da1f3;
 }
-i.fa-instagram:hover {
+i.fa-instagram {
   color: #d10869;
 }
-i.fa-linkedin:hover {
+i.fa-linkedin {
   color: #0077b5;
 }
 
@@ -114,6 +116,7 @@ i.fa-linkedin:hover {
 #graphs .inner {
   background-color: #d2d2d2;
   padding: 30px 20px;
+  box-shadow: 5px 5px 10px #636363;
 }
 .progress {
   margin-bottom: 20px;
@@ -144,9 +147,6 @@ i.fa-linkedin:hover {
   background-size: cover;
   background-position: top center;
 }
-#projectSection .work:first-child .img-container{
-  background-image: url('assets/profile_pic.jpg');
-}
 #projectSection h3 {
   text-align: center;
   margin: 30px 0 10px 0;
@@ -154,42 +154,10 @@ i.fa-linkedin:hover {
 .work .inner {
   background-color: #ffffff;
   padding: 15px;
-  box-shadow: 1px 1px 5px #cfcfcf;
+  transition: all .2s ease;
 }
 
 
-/*Contact Section*/
-#contactSection {
-  background: #515151;
-  color: rgba(255,255,255,.9);
-  padding: 80px 15px;
-}
-#contactSection h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-#contactSection .row > div:nth-child(2) {
-  margin-bottom: 30px;
-  text-align: center;
-}
-#contactSection input, #contactSection textarea {
-  width: 100%;
-}
-label {
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-label:first-child {
-  margin-top: 0;
-}
-
-
-#contactSection button {
-  display: block;
-  margin-top: 20px;
-
-}
 footer {
   background: #393939;
   color: rgba(255,255,255,.9);

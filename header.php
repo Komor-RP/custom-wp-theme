@@ -57,9 +57,9 @@
 
           <?php if ( get_theme_mod( 'profile_image' ) ) : ?>
             <img class="img-fluid" id="profile_image" src='<?php echo esc_url( get_theme_mod( 'profile_image' ) ); ?>' alt='profile'>
-          <?php else : ?>
-            <img src='https://cdn.discordapp.com/emojis/482045082669940737.png?v=1' alt='ew'>
           <?php endif; ?>
+
+          
 
         </div>
       </div>
